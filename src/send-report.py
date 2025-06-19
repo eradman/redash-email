@@ -169,5 +169,6 @@ if __name__ == "__main__":
                 if not args.dry_run:
                     print("Connect to", sm)
                     sm.send_smtp()
+
         finally:
             redash.dashboard_reset(dashboard_id)
