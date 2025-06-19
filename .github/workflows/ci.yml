@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  lint:
+  format:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,8 @@ jobs:
           node-version: 20
       - run: pip install -r dev.txt
       - run: npm install
-      - run: make lint
+      - run: make format
+      - run: git diff --exit-code
 
   unit-tests:
     runs-on: ubuntu-22.04
